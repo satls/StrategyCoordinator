@@ -14,25 +14,25 @@ Strategies are a pattern of breaking often large sections of domain logic into s
 * Increase the reuse of domain logic.
 * Simple strategies can be combined in any order to achieve complex tasks.
 
-A real world example of a strategy might be in cooking recipe:
+A real world example of a strategy might be in a cooking recipe:
  
  1. An oven must be pre heated to some temperature.
- 1. Eggs, flour, sugar, and butter must be mixex in a bowl.
+ 1. Eggs, flour, sugar, and butter must be mixed in a bowl.
  1. The mixture must be separated into small pieces
  1. The small pieces must be put in the oven.
  1. The pieces must be taken out of the oven after 25 minutes
  1. The pieces must be allowed to cool for 10 minutes.
  1. the pieces must be put on a plate.
 
-In the above recipie the cook reads the recipie, performs actions, and those actions have side effects on the domain of the cook (kitchen), ultimatly resulting in cookies (the result).
+In the above recipe the cook reads the recipe, performs actions, and those actions have side effects on the domain of the cook (kitchen), ultimately resulting in cookies (the result).
 
- A computer program that coordinates all of these instuctions but only makes cookies does not allow easy reuse of compliated components.
+ A computer program that coordinates all of these instructions but only makes cookies does not allow easy reuse of complicated components.
 
- Ideally the program could be configured to cook a recipie rather than a single program being required for each new recipie.
+ Ideally the program could be configured to cook a recipe rather than a single program being required for each new recipe.
 
 ## Coordinator Configuration
 
-The above recipie can be looked at as domain (kitchen) specific actions that require integration with the kitchen such as pressing the button to activate the mixer, and the side effects that are happening that result in cookies such as combining the ingredients to make cookie batter. Mixing is the action, cookie batter is the side effect.
+The above recipe can be looked at as domain (kitchen) specific actions that require integration with the kitchen such as pressing the button to activate the mixer, and the side effects that are happening that result in cookies such as combining the ingredients to make cookie batter. Mixing is the action, cookie batter is the side effect.
 
 A cookie maker coordinator might look like this:
 
@@ -77,7 +77,7 @@ At this point in the application we would have created the cookie batter.
 
 ## Strategy Configuration
 
-It would pretty neat if we could use the preheat oven strategy for other recipies that require the oven to be preheated such as baked potatoes, but that require a different temperature.
+It would pretty neat if we could use the preheat oven strategy for other recipes that require the oven to be preheated such as baked potatoes, but that require a different temperature.
 
 A smart developer might inject the temperature in the constructor like this:
 
@@ -86,8 +86,8 @@ public class PreheatOvenStrategy: StrategyCoordinator.Core.IAsyncProcessStrategy
 
     private readonly int _temperature;
 
-    public PreheatOvenStrategy(int tempurature){
-        this._temperature = tempurature;
+    public PreheatOvenStrategy(int temperature){
+        this._temperature = temperature;
     }
 
     public async System.Threading.Tasks.Task ProcessAsync(Kitchen kitchen, StrategyCoordinator.Core.IInvokeable next)
@@ -110,7 +110,7 @@ cookieCoordinatorFactory.UseAsync(preheatStrategy);
 
 After the cookie recipe strategies have been loaded in, the cookies are ready to be made, or in this case the ingredients are ready to be processed.
 
-First an instance of the cookie coordinator must be built, this can be thought of as a kitchen being created and a copy of the recipie being given to the cook.  
+First an instance of the cookie coordinator must be built, this can be thought of as a kitchen being created and a copy of the recipe being given to the cook.  
 
 Then the ingredients can be given to the waiting kitchen and cook.
 
