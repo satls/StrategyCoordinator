@@ -7,7 +7,7 @@ https://www.nuget.org/packages/StrategyCoordinator/
 
 
 ## Strategies
-Strategies are a pattern of breaking often large sections of domain logic into small and testable components with strongly defined side effects. The advantages are x fold:
+Strategies are a pattern of breaking often large sections of domain logic into small and testable components with strongly defined side effects. There are a bunch of nifty advantages:
 
 * Long pieces of code can be broken into small pieces.
 * Stategies that encapsulate domain logic can be easily tested.
