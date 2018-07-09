@@ -1,6 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\StrategyCoordinator.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="StrategyCoordinator" Version="1.0.0" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>

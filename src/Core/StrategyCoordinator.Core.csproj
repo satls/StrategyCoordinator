@@ -1,7 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>StrategyCoordinator</PackageId>
+    <Title>Strategy Coordinator</Title>
+    <Version>1.0.0</Version>
+    <Authors>satls</Authors>
+    <Company>none</Company>
+    <PackageProjectUrl>https://github.com/satls/StrategyCoordinator</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-
 </Project>
