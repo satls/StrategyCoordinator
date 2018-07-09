@@ -10,7 +10,7 @@ https://www.nuget.org/packages/StrategyCoordinator/
 Strategies are a pattern of breaking often large sections of domain logic into small and testable components with strongly defined side effects. There are a bunch of nifty advantages:
 
 * Long pieces of code can be broken into small pieces.
-* Stategies that encapsulate domain logic can be easily tested.
+* Strategies that encapsulate domain logic can be easily tested.
 * Increase the reuse of domain logic.
 * Simple strategies can be combined in any order to achieve complex tasks.
 
@@ -40,7 +40,7 @@ A cookie maker coordinator might look like this:
 var cookieCoordinatorFactory = new StrategyCoordinatorFactory<Ingredients, Cookies, Kitchen>(new KitchenFactory());
 ```
 
-Where ```Ingredients``` are the input type, ```Cookies``` are the output type, and the ```Kithen``` type is where all the side effects take place.
+Where ```Ingredients``` are the input type, ```Cookies``` are the output type, and the ```Kitchen``` type is where all the side effects take place.
 
 The first action of heating the oven might look like this:
 
@@ -99,7 +99,7 @@ public class PreheatOvenStrategy: StrategyCoordinator.Core.IAsyncProcessStrategy
 }
 ```
 
-then the pre heating strategy can be configured like this:
+then the pre-heating strategy can be configured like this:
 
 ```
 var preheatStrategy = new PreheatOvenStrategy(350);
