@@ -1,6 +1,10 @@
 # Strategy Coordinator
 
-This library makes the chaining and coordination of strategies simple.
+This dotnet standard 2.0 library makes the chaining and coordination of strategies simple for dotnet applications.
+
+## Nuget
+https://www.nuget.org/packages/StrategyCoordinator/ 
+
 
 ## Strategies
 Strategies are a pattern of breaking often large sections of domain logic into small and testable components with strongly defined side effects. The advantages are x fold:
@@ -115,5 +119,3 @@ var cookieCoordinator = cookieCoordinatorFactory.Build();
 
 var cookies = await cookieCoordinator.ProcessAsync(ingredients);
 ```
-
-## Inversion of Control
