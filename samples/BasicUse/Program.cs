@@ -9,9 +9,6 @@
             var appBuilder = new StrategyCoordinator.Core.StrategyCoordinatorFactory<string, string, Context>(contextFactory);
 
             appBuilder.UseAsync(new ReverseInputStrategy());
-            appBuilder.UseAsync(async (context, next)=>{
-                await next.InvokeAsync();
-            });
 
             var application = appBuilder.Build();
 
