@@ -6,13 +6,13 @@
         {
             var contextFactory = new ContextFactory();
 
-            var appBuilder = new StrategyCoordinator.Core.StrategyCoordinatorFactory<string, string, Context>(contextFactory);
+            var coordinatorBuilder = new StrategyCoordinator.Core.StrategyCoordinatorFactory<string, string, Context>(contextFactory);
 
-            appBuilder.UseAsync(new ReverseInputStrategy());
+            coordinatorBuilder.UseAsync(new ReverseInputStrategy());
 
-            var application = appBuilder.Build();
+            var coordinator = coordinatorBuilder.Build();
 
-            var output = application.ProcessAsync("Hello World!").Result;
+            var output = coordinator.ProcessAsync("Hello World!").Result;
 
             System.Console.WriteLine(output);
         }
