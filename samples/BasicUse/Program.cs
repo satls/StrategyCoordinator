@@ -17,8 +17,6 @@
 
             var output = application.ProcessAsync("Hello World!").Result;
 
-            application.ProcessAsync("Hello World!");
-
             System.Console.WriteLine(output);
         }
     }
