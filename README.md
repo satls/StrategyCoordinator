@@ -70,6 +70,8 @@ cookieCoordinatorFactory.UseAsync(async (Kitchen, Next)=>{
     Kitchen.MixingBowl.Add(Kitchen.Mix);
 
     await Kitchen.MixingBowl.Mix();
+    
+    await Next.InvokeAsync();
 });
 ```
 
