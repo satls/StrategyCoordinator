@@ -4,6 +4,7 @@ This dotnet standard 2.0 library makes the chaining and coordination of strategi
 
 ## Nuget
 https://www.nuget.org/packages/StrategyCoordinator/ 
+
 https://www.nuget.org/packages/StrategyCoordinatorAutofacExtension/
 
 
