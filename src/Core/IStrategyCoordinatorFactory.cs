@@ -4,7 +4,7 @@
     {
         void UseAsync(System.Func<TContext, IInvokeable, System.Threading.Tasks.Task> function);
 
-        void UseAsync(IAsyncProcessStrategy<TContext> middleware);
+        void UseAsync(IAsyncProcessStrategy<TContext> strategy);
 
         IStrategyCoordinator<TIn, TOut> Build();
     }

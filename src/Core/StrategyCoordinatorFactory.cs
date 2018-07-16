@@ -16,7 +16,7 @@
             this._contextFactory = contextFactory;
         }
 
-        public void UseAsync(System.Func<TContext, IInvokeable, System.Threading.Tasks.Task> function)
+        public virtual void UseAsync(System.Func<TContext, IInvokeable, System.Threading.Tasks.Task> function)
         {
             if (function == null)
             {
@@ -26,17 +26,26 @@
             this._functions.Add(function);
         }
 
-        public void UseAsync(IAsyncProcessStrategy<TContext> middleware)
+        public virtual void UseAsync(IAsyncProcessStrategy<TContext> strategy)
         {
-            if (middleware == null)
+            if (strategy == null)
             {
-                throw new System.ArgumentNullException("Tried to queue a null value for middleware.");
+                throw new System.ArgumentNullException("Tried to queue a null value for strategy.");
             }
 
-            this.UseAsync(middleware.ProcessAsync);
+            this.UseAsync(strategy.ProcessAsync);
         }
 
-        public IStrategyCoordinator<TIn, TOut> Build()
+        public virtual void UseAsync<TStrategy>() where TStrategy : IAsyncProcessStrategy<TContext>
+        {
+            var strategyType = typeof(TStrategy);
+
+            IAsyncProcessStrategy<TContext> strategy = (TStrategy)System.Activator.CreateInstance(strategyType);
+
+            this.UseAsync(strategy);
+        }
+
+        public virtual IStrategyCoordinator<TIn, TOut> Build()
         {
             return new StrategyCoordinator<TIn, TOut, TContext>(this._functions, this._contextFactory);
         }

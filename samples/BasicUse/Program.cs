@@ -8,7 +8,7 @@
 
             var coordinatorBuilder = new StrategyCoordinator.Core.StrategyCoordinatorFactory<string, string, Context>(contextFactory);
 
-            coordinatorBuilder.UseAsync(new ReverseInputStrategy());
+            coordinatorBuilder.UseAsync<ReverseInputStrategy>();
 
             var coordinator = coordinatorBuilder.Build();
 
