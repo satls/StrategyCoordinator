@@ -32,7 +32,7 @@
         }
     }
 
-    public class ReverseInputStrategy: StrategyCoordinator.Core.IAsyncProcessStrategy<Context>
+    public class ReverseInputStrategy : StrategyCoordinator.Core.IAsyncProcessStrategy<Context>
     {
         public async System.Threading.Tasks.Task ProcessAsync(Context context, StrategyCoordinator.Core.IInvokeable next)
         {
@@ -40,7 +40,7 @@
 
             System.Collections.Generic.IEnumerable<char> reverseChars = System.Linq.Enumerable.Reverse(chars);
 
-            string reverse = string.Join(string.Empty, reverseChars); 
+            string reverse = string.Join(string.Empty, reverseChars);
 
             context.Result = reverse;
 

@@ -1,9 +1,11 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicUse", "BasicUse\BasicUse.csproj", "{8593ADF2-5CE6-42DC-B740-6FB5AB50CE51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacInjection", "AutofacInjection\AutofacInjection.csproj", "{660C3868-1451-4133-8349-E1E016A54343}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +32,17 @@ Global
 		{8593ADF2-5CE6-42DC-B740-6FB5AB50CE51}.Release|x64.Build.0 = Release|x64
 		{8593ADF2-5CE6-42DC-B740-6FB5AB50CE51}.Release|x86.ActiveCfg = Release|x86
 		{8593ADF2-5CE6-42DC-B740-6FB5AB50CE51}.Release|x86.Build.0 = Release|x86
+		{660C3868-1451-4133-8349-E1E016A54343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Debug|x64.Build.0 = Debug|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Debug|x86.Build.0 = Debug|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Release|x64.ActiveCfg = Release|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Release|x64.Build.0 = Release|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Release|x86.ActiveCfg = Release|Any CPU
+		{660C3868-1451-4133-8349-E1E016A54343}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
