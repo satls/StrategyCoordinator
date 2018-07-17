@@ -14,7 +14,7 @@ namespace StrategyCoordinator.Extensions.AutofacExtension
         public static StrategyCoordinatorFactory<TIn, TOut, TContext> ResolveFactory<TIn, TOut, TContext>() where TContext : StrategyCoordinator.Core.IContext<TIn, TOut>
         {
             if(Container == null){
-                throw new System.ArgumentException("No DI container has been set. Make sure UseContainer has been called with the desired Autofac.IContainer to use for dependency resolution.");
+                throw new System.InvalidOperationException("No DI container has been set. Make sure UseContainer has been called with the desired Autofac.IContainer to use for dependency resolution.");
             }
 
             using (var scope = Container.BeginLifetimeScope())
